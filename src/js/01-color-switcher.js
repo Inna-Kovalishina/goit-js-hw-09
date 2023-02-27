@@ -12,14 +12,16 @@ function onBtnStartClick() {
       bodyEl.style.backgroundColor = getRandomHexColor();
   }, 1000)
 
-  btnStart.setAttribute('disabled', 'disabled');
+  btnStart.disabled = true;
+  btnStop.disabled = false;
 }
 
 
 function onBtnStopClick() {
   clearInterval(timerId);
 
-  btnStart.removeAttribute('disabled');
+  btnStart.disabled = false;
+  btnStop.disabled = true;
 }
 
 
