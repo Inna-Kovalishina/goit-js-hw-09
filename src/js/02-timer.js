@@ -36,16 +36,16 @@ const options = {
   time_24hr: true,
   defaultDate: new Date(),
   minuteIncrement: 1,
-    onClose(selectedDates) {
-        if (selectedDates[0].getTime() < new Date().getTime()) {
-          Notify.failure('Please choose a date in the future', {position: 'center-top',} 
-          );
-            // alert('Please choose a date in the future');
-            return; 
-        }
-        btnStart.disabled = false;
-        return;
-    //   console.log(selectedDates[0].getTime());
+  onClose(selectedDates) {
+    console.log(selectedDates[0].getTime());
+      if (selectedDates[0].getTime() < new Date().getTime()) {
+        Notify.failure('Please choose a date in the future', {position: 'center-top',} 
+        );
+          // alert('Please choose a date in the future');
+          return; 
+      }
+      btnStart.disabled = false;
+      return;
   },
 };
 const calendar = flatpickr('#datetime-picker', options);
